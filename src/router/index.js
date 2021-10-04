@@ -32,6 +32,16 @@ const routes = [
     component: () => import("../views/Play.vue"),
   },
   {
+    path: "/teams",
+    name: "teams",
+    component: () => import("../views/teams.vue"),
+  },
+  {
+    path: "/leaderboard",
+    name: "leaderboard",
+    component: () => import("../views/LeaderBoard.vue"),
+  },
+  {
     path: "/admin",
     name: "admin",
     component: () => import("../views/Admin.vue"),

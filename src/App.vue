@@ -8,9 +8,10 @@
               alt="Vuetify Logo"
               class="shrink mr-2"
               contain
-              src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+              src="@/assets/logo.png"
               transition="scale-transition"
-              width="40"
+              width="70"
+              height = "90"
             />
             <div class="display-1" style="color: white !important">
               GameTime
@@ -22,8 +23,10 @@
         <div class="text-center">
           <v-btn text to="/fixture">Fixtures</v-btn>
           <v-btn text to="/standing">All Leauges</v-btn>
-          <v-btn text to="/all-seasons">Seasons</v-btn>
+          <v-btn text to="/all-seasons">EPL Season</v-btn>
+          <v-btn text to="/teams">Teams</v-btn>
           <v-btn text to="/play">play fantasy league</v-btn>
+          <v-btn text to="/leaderboard">LeaderBoard</v-btn>
         </div>
         <v-spacer></v-spacer>
         <v-btn color="white" to="/admin" icon><v-icon>mdi-login</v-icon></v-btn>

@@ -92,23 +92,25 @@ export default {
           console.log("error", e.status);
         });
     },
-    async getTopScorer() {
-      let self = this;
-      await api
-        .TOP_SCORER()
-        .then((res) => {
+        async getTopScorer() {
+          let self = this;
+          await api
+          .TOP_SCORER()
+          .then((res) => {
           res.data.data.forEach((el, i) => {
             if (i < 6) {
               if (el.expand !== null) {
                 if (el.expand.player !== null) {
                   el.expand.player.forEach((element) => {
-                    self.playerList.push({
-                      name: element.fullName,
-                      image: element.photoURL,
-                      country: element.nationalities[0],
-                      rank: el.rank,
-                      goals: el.totalGoals,
-                    });
+                    if (element.nationalities !== null) {
+                      self.playerList.push({
+                        name: element.fullName,
+                        image: element.photoURL,
+                        country: element.nationalities[0],
+                        rank: el.rank,
+                        goals: el.totalGoals,
+                      });
+                    }
                   });
                 }
               }

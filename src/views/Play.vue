@@ -1,25 +1,6 @@
 <template>
   <div>
     <div class="d-flex text-center justify-center mt-5">
-      <v-card class="mb-4 mr-4" width="200" height="280">
-        <v-simple-table>
-          <template v-slot:default>
-            <thead>
-              <tr>
-                <th class="text-left">Name</th>
-                <th class="text-left">Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(item, index) in user" :key="index">
-                <td class="text-left">{{ item.email }}</td>
-                <td class="text-left">{{ item.score }}</td>
-              </tr>
-            </tbody>
-          </template>
-        </v-simple-table>
-      </v-card>
-
       <div v-if="!showPlayGround">
         <v-card class="p-5" width="400">
           <v-card class="elevation-12">
@@ -197,21 +178,6 @@ export default {
       localStorage.removeItem("loggedIn");
       localStorage.removeItem("user");
       this.showPlayGround = false;
-    },
-    getTopUser() {
-      let self = this;
-      api
-        .topPlayers()
-        .then((e) => {
-          console.log(e.data);
-          const arrayOfUser = e.data.replace(e.data[1], "");
-          const split = JSON.parse(arrayOfUser);
-          console.log(split);
-          self.user = split;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
     },
     notify(color, text) {
       this.snackbar = true;
