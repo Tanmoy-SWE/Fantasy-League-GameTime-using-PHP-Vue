@@ -6,13 +6,15 @@
 
         // Table
         private $db_table = "user";
+        private $db_table_matches = "matches";
+        private $db_table_updateScore = "Updatescore";
 
         // Columns
         public $id;
         public $name;
         public $email;
         public $score;
-         public $matches;
+        public $matches;
         public $created;
 
         // Db connection
@@ -22,6 +24,14 @@
 
         // GET ALL
         public function getEmployees(){
+            
+            $sqlQuery = "UPDATE " . $this->db_table . " ut, " . $this->db_table_matches . " m SET m.updated = 1 ,ut.score = score+2 where ut.email
+            in (SELECT user FROM " . $this->db_table_matches . " P INNER JOIN " . $this->db_table_updateScore . " C WHERE P.updated IS NULL AND P.willWin = C.willWin )
+            AND m.user IN (SELECT user FROM " . $this->db_table_matches . " P INNER JOIN " . $this->db_table_updateScore . " C WHERE P.updated IS NULL AND P.willWin = C.willWin )";
+            $stmt = $this->conn->prepare($sqlQuery);
+            $stmt->execute();
+
+            
             $sqlQuery = "SELECT id, name, email, score, created FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
