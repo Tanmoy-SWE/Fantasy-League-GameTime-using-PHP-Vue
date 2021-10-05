@@ -255,7 +255,7 @@ export default {
       this.moadl = true;
       this.match.homeName = item.homeName;
       this.match.awayName = item.awayName;
-      this.match.user = item.user;
+       this.match.user = localStorage.getItem("user");
       this.match.league = item.league;
       this.match.date = item.date;
     },

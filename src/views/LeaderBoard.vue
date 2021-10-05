@@ -43,6 +43,9 @@ export default {
           const arrayOfUser = e.data.replace(e.data[1], "");
           const split = JSON.parse(arrayOfUser);
           console.log(split);
+          split.sort(function (a, b) {
+            return b.score - a.score;
+          });
           self.user = split;
         })
         .catch((e) => {

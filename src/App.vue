@@ -22,7 +22,7 @@
         <v-spacer></v-spacer>
         <div class="text-center">
           <v-btn text to="/fixture">Fixtures</v-btn>
-          <v-btn text to="/standing">All Leauges</v-btn>
+          <v-btn text to="/standing">Matches</v-btn>
           <v-btn text to="/all-seasons">EPL Season</v-btn>
           <v-btn text to="/teams">Teams</v-btn>
           <v-btn text to="/play">play fantasy league</v-btn>
