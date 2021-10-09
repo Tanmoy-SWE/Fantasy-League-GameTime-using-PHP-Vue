@@ -5,7 +5,7 @@
     </div>
     <div v-else class="mt-4">
       <v-container>
-        <h3 class="my-4">Premier League</h3>
+        <h3 class="my-4 white--text" >Premier League</h3>
         <v-card class="elevation-5 p-4">
           <v-text-field
             v-model="search"

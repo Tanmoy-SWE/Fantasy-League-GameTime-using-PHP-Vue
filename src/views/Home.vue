@@ -6,9 +6,9 @@
     <div v-else>
       <v-tabs
         v-model="tab"
-        background-color="white"
+        background-color="transparent"
         centered
-        light
+        dark
         icons-and-text
         dense
       >
@@ -43,9 +43,7 @@
                   <div>Rank: {{ p.rank }}</div>
                 </v-card-text>
               </div>
-
-              <h3></h3
-            ></v-card>
+              </v-card>
           </div>
         </slide>
       </carousel-3d>

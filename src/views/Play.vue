@@ -151,7 +151,7 @@ export default {
       this.showPlayGround = true;
       await this.getSeasons();
     }
-    await this.getTopUser();
+   
   },
   data() {
     return {
