@@ -49,7 +49,7 @@
                 <li>
           <a
             target="_blank"
-            href="        https://www.wolves.co.uk/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        https://www.nufc.co.uk/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -60,9 +60,9 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/50/t39.png"
+                src="https://resources.premierleague.com/premierleague/badges/50/t4.png"
                 srcset="
-                  https://resources.premierleague.com/premierleague/badges/50/t39.png 2x
+                  https://resources.premierleague.com/premierleague/badges/50/t4.png 2x
                 "
               />
             </div>
@@ -71,7 +71,7 @@
                 <li>
           <a
             target="_blank"
-            href="        https://www.wolves.co.uk/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        https://www.canaries.co.uk/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -82,9 +82,9 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/50/t39.png"
+                src="https://resources.premierleague.com/premierleague/badges/25/t45.png"
                 srcset="
-                  https://resources.premierleague.com/premierleague/badges/50/t39.png 2x
+                  https://resources.premierleague.com/premierleague/badges/25/t45.png 2x
                 "
               />
             </div>
@@ -93,7 +93,7 @@
                 <li>
           <a
             target="_blank"
-            href="        https://www.wolves.co.uk/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        https://www.southamptonfc.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -104,9 +104,9 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/50/t39.png"
+                src="https://resources.premierleague.com/premierleague/badges/25/t20.png"
                 srcset="
-                  https://resources.premierleague.com/premierleague/badges/50/t39.png 2x
+                  https://resources.premierleague.com/premierleague/badges/25/t20.png 2x
                 "
               />
             </div>
@@ -137,7 +137,7 @@
                 <li>
           <a
             target="_blank"
-            href="        https://www.watfordfc.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        http://www.liverpoolfc.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -148,9 +148,9 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/50/t57.png"
+                src="https://resources.premierleague.com/premierleague/badges/25/t14.png"
                 srcset="
-                  https://resources.premierleague.com/premierleague/badges/50/t57.png 2x
+                  https://resources.premierleague.com/premierleague/badges/25/t14.png 2x
                 "
               />
             </div>
@@ -204,7 +204,7 @@
         <li>
           <a
             target="_blank"
-            href="        https://www.brentfordfc.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        http://www.manutd.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -237,7 +237,7 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/25/t36.png"
+                src="https://resources.premierleague.com/premierleague/badges/50/t1.png"
                 srcset="
                   https://resources.premierleague.com/premierleague/badges/25/t36@x2.png 2x
                 "
@@ -337,7 +337,7 @@
         <li>
           <a
             target="_blank"
-            href="        http://www.leedsunited.com?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
+            href="        https://www.mancity.com?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
 "
             role="menuitem"
           >
@@ -348,9 +348,9 @@
             >
               <img
                 class="badge-image badge-image--25 js-badge-image"
-                src="https://resources.premierleague.com/premierleague/badges/25/t2.png"
+                src="https://resources.premierleague.com/premierleague/badges/25/t43.png"
                 srcset="
-                  https://resources.premierleague.com/premierleague/badges/25/t2@x2.png 2x
+                  https://resources.premierleague.com/premierleague/badges/25/t43.png 2x
                 "
               />
             </div>
