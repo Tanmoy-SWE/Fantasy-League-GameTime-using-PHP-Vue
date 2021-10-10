@@ -110,7 +110,7 @@ export default {
       group: null,
       nav:[
         {name:"Fixtures", to : "/fixture"},
-        {name:"Matches",to:"/standing"},
+        {name:"All Leagues",to:"/standing"},
         {name:"EPL Season",to:"/all-seasons"},
         //{name:"Teams",to:"/teams"},
         {name:"Fantasy league",to:"/play"},

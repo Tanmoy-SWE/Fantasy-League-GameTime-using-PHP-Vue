@@ -71,7 +71,7 @@ export default {
     async getToken() {
       let data = "grant_type=client_credentials";
       const authorization =
-        "MW5kYnRqbjBybzFhaHZmb3NyOHBzanNmbDI6MWxzcmU2cmtibWQ0NDR1a3Y5dTRvOHIyMWZyMGY4YTl1Mjh0ZGhzZzF1NW0wazZpM2xzZg==";
+        "NnBxZGNxcWwxMWdmaHB1YjBjZnVkYzJxb2I6cjN1czJlMW1rdmwxOHVkY2ZkOWw4dWtmZTN1MXN0MGhtNXBvN3Vvb2JnaWVkajZzaG5z";
       await axios
         .post("https://oauth2.elenasport.io/oauth2/token", data, {
           headers: {
