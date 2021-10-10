@@ -1,10 +1,12 @@
 import axios from "axios";
 
+// for elena sports
 const appClient = axios.create({
   baseURL: "https://football.elenasport.io/v2/",
   headers: getHeaders(),
 });
 
+// for mysql
 const appServer = axios.create({
   baseURL: "http://localhost/game/api/",
 });
@@ -38,15 +40,9 @@ export default {
   // server
   signUp(payload) {
     return appServer.get(
-      `create.php?name=${payload.password}&&email=${payload.email}&&matches=${payload.matches}&&score=${payload.point}`
+      `create.php?name=${payload.name}&&email=${payload.email}&&matches=${payload.matches}&&score=${payload.point}&&password=${payload.password}`
     );
   },
-  Login(payload) {
-    return appClient.post(
-      `login?email=${payload.email}&&password=${payload.password}`
-    );
-  },
-
   login(payload) {
     return appServer.post(`login.php`, payload);
   },

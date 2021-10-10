@@ -46,10 +46,10 @@
         </div>
         <v-spacer></v-spacer>
 
-        <v-btn color="white" to="/admin" icon><v-icon>mdi-login</v-icon></v-btn>
+        <v-btn color="white" to="/admin" icon>Admin</v-btn>
        
         <v-btn icon v-if="!$vuetify.theme.dark" @click="toggleTheme()">
-          <v-icon class="mr-1" color="blue-grey darken-4">mdi-lightbulb</v-icon>
+          <v-icon class="mr-1" color="white darken-4">mdi-lightbulb</v-icon>
         </v-btn>
        
         <v-btn icon v-if="$vuetify.theme.dark" @click="toggleTheme()">
@@ -114,7 +114,7 @@ export default {
         {name:"EPL Season",to:"/all-seasons"},
         //{name:"Teams",to:"/teams"},
         {name:"Fantasy league",to:"/play"},
-        {name:"LeaderBoard",to:"/leaderboard"}]
+        {name:"Fantasy LeaderBoard",to:"/leaderboard"}]
     };
   },
   methods: {

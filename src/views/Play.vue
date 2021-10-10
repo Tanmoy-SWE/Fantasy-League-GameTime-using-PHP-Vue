@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="d-flex text-center justify-center mt-5">
+      <!-- login card -->
       <div v-if="!showPlayGround">
         <v-card class="p-5" width="400">
           <v-card class="elevation-12">
@@ -10,34 +11,48 @@
             <v-card-text>
               <v-form ref="form" v-model="valid" lazy-validation>
                 <v-text-field
+                outlined
+                  v-if="modeSignup"
+                  prepend-icon="mdi-person"
+                  name="name"
+                  label="Enter your full name"
+                  type="text"
+                  v-model="name"
+                  :rules="[(v) => !!v || 'name is required']"
+                ></v-text-field>
+                <v-text-field
+                  outlined
                   prepend-icon="mdi-person"
                   name="login"
-                  label="Login"
+                  label="Email"
                   type="text"
                   v-model="email"
                   :rules="[(v) => !!v || 'email is required']"
                 ></v-text-field>
                 <v-text-field
+                  outlined
                   id="password"
                   prepend-icon="mdi-lock"
                   name="password"
                   label="Password"
                   type="password"
                   v-model="password"
-                  :rules="[(v) => !!v || 'pasword is required']"
+                  :rules="[(v) => !!v || 'pasword is required', v => v.length >= 8 || 'password must be greater than 8 characters',]"
                 ></v-text-field>
               </v-form>
             </v-card-text>
             <v-card-actions>
               <v-btn
+                v-if="modeSignup"
                 :disabled="!valid"
                 color="primary"
                 class="mr-4"
                 @click="signUp('signup')"
                 >Sign up</v-btn
               >
-              <v-spacer></v-spacer>
+              <!-- <v-spacer></v-spacer> -->
               <v-btn
+                v-else-if="!modeSignup"
                 :disabled="!valid"
                 color="primary"
                 class="mr-4"
@@ -45,6 +60,14 @@
                 >Login</v-btn
               >
             </v-card-actions>
+            <v-card-text>
+              <p v-if="!modeSignup" @click="modeSignup = true">
+                Need a account? Sign up here.
+              </p>
+              <p v-if="modeSignup" @click="modeSignup = false">
+                Already have a account? Login here
+              </p>
+            </v-card-text>
           </v-card></v-card
         >
       </div>
@@ -151,10 +174,10 @@ export default {
       this.showPlayGround = true;
       await this.getSeasons();
     }
-   
   },
   data() {
     return {
+      modeSignup: false,
       loading: true,
       matches: [],
       user: [],
@@ -166,6 +189,7 @@ export default {
       loggedin: true,
       showPlayGround: false,
       moadl: false,
+      name: "",
       email: "",
       password: "",
       leauge: "",
@@ -191,6 +215,7 @@ export default {
             password: this.password,
             point: 0,
             matches: 0,
+            name: this.name,
           };
           let self = this;
           await api
@@ -211,6 +236,7 @@ export default {
         if (this.$refs.form.validate()) {
           let user = {
             email: this.email,
+            password: this.password,
           };
           let self = this;
           await api
@@ -255,7 +281,7 @@ export default {
       this.moadl = true;
       this.match.homeName = item.homeName;
       this.match.awayName = item.awayName;
-       this.match.user = localStorage.getItem("user");
+      this.match.user = localStorage.getItem("user");
       this.match.league = item.league;
       this.match.date = item.date;
     },
@@ -296,3 +322,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.v-card__actions {
+    align-items: center;
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+}
+</style>
