@@ -16,6 +16,8 @@
         public $score;
         public $matches;
         public $created;
+        public $password;
+        
 
         // Db connection
         public function __construct($db){
@@ -47,7 +49,8 @@
                         email = :email, 
                         score = :score, 
                         matches = :matches, 
-                        created = :created";
+                        created = :created,
+                        password = :password" ;
             $stmt = $this->conn->prepare($sqlQuery);
         
             // sanitize
@@ -56,13 +59,14 @@
             $this->score=htmlspecialchars(strip_tags($this->score));
             $this->matches=htmlspecialchars(strip_tags($this->matches));
             $this->created=htmlspecialchars(strip_tags($this->created));
-        
+            $this->password=htmlspecialchars(strip_tags($this->password));
             // bind data
             $stmt->bindParam(":name", $this->name);
             $stmt->bindParam(":email", $this->email);
             $stmt->bindParam(":score", $this->score);
             $stmt->bindParam(":matches", $this->matches);
             $stmt->bindParam(":created", $this->created);
+            $stmt->bindParam(":password", hash("sha256", $this->password));
         
             if($stmt->execute()){
                return true;
@@ -122,7 +126,7 @@
         
             // bind data
             $stmt->bindParam(":name", $this->name);
-            $stmt->bindParam(":email", $this->email);
+            $stmt->bindParam(":email", $this->email,hash('sha256',$this->email));
             $stmt->bindParam(":score", $this->score);
             $stmt->bindParam(":created", $this->created);
             $stmt->bindParam(":id", $this->id);
@@ -150,15 +154,18 @@
         public function login($data)
         {
             $email = $data->email;
+            $password = hash('sha256', $data->password);
 
             $sqlQuery = "SELECT * FROM
                         ". $this->db_table ."
                     WHERE 
-                       email = ?";
+                       email = ? AND
+                       password = ?";
 
             $stmt = $this->conn->prepare($sqlQuery);
 
             $stmt->bindParam(1, $email);
+            $stmt->bindParam(2, $password);
 
             $stmt->execute();
 

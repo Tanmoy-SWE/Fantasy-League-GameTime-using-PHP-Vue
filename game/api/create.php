@@ -18,6 +18,8 @@
     $item->name = ( isset($data['name']) ) ? $data['name'] : "";
     $item->email = ( isset($data['email']) ) ? $data['email'] : "";
     $item->score = (isset($data['score'])) ? $data['score'] : "";
+    $item->password = (isset($data['password'])) ? $data['password'] : "";
+    
     $item->created = date('Y-m-d H:i:s');
     
     if($item->createEmployee()){
