@@ -112,7 +112,7 @@ export default {
         {name:"Fixtures", to : "/fixture"},
         {name:"All Leagues",to:"/standing"},
         {name:"EPL Season",to:"/all-seasons"},
-        //{name:"Teams",to:"/teams"},
+        {name:"Teams",to:"/teams"},
         {name:"Fantasy league",to:"/play"},
         {name:"Fantasy LeaderBoard",to:"/leaderboard"}]
     };

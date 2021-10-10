@@ -204,8 +204,7 @@
         <li>
           <a
             target="_blank"
-            href="        http://www.manutd.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link
-"
+            href="        http://www.manutd.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link"
             role="menuitem"
           >
             <div

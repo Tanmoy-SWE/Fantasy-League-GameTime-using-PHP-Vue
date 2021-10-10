@@ -5,7 +5,7 @@
     </div>
     <div v-else class="mt-4">
       <v-container>
-        <h3 class="my-4 white--text">Premier League</h3>
+        <h3 class="my-4">All Leagues</h3>
         <v-card class="elevation-5 p-4">
           <v-text-field
             v-model="search"
@@ -25,7 +25,7 @@
 
 <script>
 import api from "@/service/api";
-import moment from "moment";
+// import moment from "moment";
 export default {
   data() {
     return {
@@ -34,36 +34,45 @@ export default {
       table: [],
       headers: [
         {
-          text: "Date",
-          align: "start",
-          value: "date",
+          text: "Country Name",
+          sortable: true,
+          value: "countryName",
         },
-        { text: "Team 1", value: "homeName", sortable: true },
-        { text: "Team 2", value: "awayName", sortable: true },
-        { text: "Venue Name", value: "venueName" },
+        {
+          text: "League Name",
+          sortable: true,
+          value: "leagueName",
+        },
+
+        {
+          text: "Start Year",
+          sortable: true,
+          value: "start",
+        },
+        {
+          text: "End Year",
+          sortable: true,
+          value: "end",
+        },
+        // { text: "Team 1", value: "homeName", sortable: true },
+        // { text: "Team 2", value: "awayName", sortable: true },
+        // { text: "Venue Name", value: "venueName" },
       ],
     };
   },
   methods: {
-    async getTeams() {
+    async getLeauge() {
       let self = this;
       await api
-        .SEASONS()
+        .STANDINGS()
         .then((res) => {
-          res.data.data.forEach((el) => {
-            if (el.expand !== null) {
-              if (el.expand.upcoming !== null) {
-                el.expand.upcoming.forEach((element) => {
-                  console.log(element);
-                  self.table.push({
-                    date: moment(element.date).format("MM-DD-YYYY hh:mm A"),
-                    homeName: element.homeName,
-                    awayName: element.awayName,
-                    venueName: element.venueName,
-                  });
-                });
-              }
-            }
+          res.data.data.forEach((element) => {
+            self.table.push({
+              leagueName: element.name,
+              countryName: element.countryName,
+              start: element.expand.current_season[0].start,
+              end: element.expand.current_season[0].end,
+            });
           });
         })
         .catch((e) => {
@@ -73,7 +82,7 @@ export default {
   },
   async created() {
     let self = this;
-    await self.getTeams();
+    await self.getLeauge();
     self.dataLoading = false;
   },
 };

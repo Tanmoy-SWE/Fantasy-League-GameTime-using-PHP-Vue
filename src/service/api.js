@@ -28,6 +28,10 @@ export default {
   TOP_YELLOW_CARD() {
     return appClient.get("seasons/4210/topyellowcards?expand=player");
   },
+  TOP_OWN_GOAL() {
+    // https://football.elenasport.io/v2/seasons/:id/topowngoals
+    return appClient.get("seasons/4210/topowngoals?expand=player");
+  },
   FIXTURES() {
     return appClient.get("upcoming");
   },
@@ -36,6 +40,10 @@ export default {
   },
   SEASONS() {
     return appClient.get("leagues/234/seasons?expand=upcoming");
+  },
+  STANDINGS() {
+    //      /v2/seasons/:id/stages
+    return appClient.get("seasons/322/stages?expand=upcoming");
   },
   // server
   signUp(payload) {

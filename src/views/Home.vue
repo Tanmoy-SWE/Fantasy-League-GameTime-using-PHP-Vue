@@ -28,6 +28,11 @@
           Top yellow card
           <v-icon>mdi-card-multiple</v-icon>
         </v-tab>
+
+        <v-tab href="#4">
+          Top Own Goals
+          <v-icon color="primary">mdi-soccer</v-icon>
+        </v-tab>
       </v-tabs>
       <carousel-3d controlsVisible height="340" width="400">
         <slide v-for="(p, index) in playerList" :key="index" :index="index">
@@ -39,7 +44,8 @@
                 <v-card-text>
                   <div>Country: {{ p.country }}</div>
                   <div v-if="tab == 2 || tab == 3">Cards: {{ p.card }}</div>
-                  <div v-else>Goals: {{ p.goals }}</div>
+                  <div v-if="tab == 4">Own Goals: {{ p.card }}</div>
+                  <div v-if="tab == 1">Goals: {{ p.goals }}</div>
                   <div>Rank: {{ p.rank }}</div>
                 </v-card-text>
               </div>
@@ -63,6 +69,7 @@ export default {
       playerList: [],
       redCards: [],
       yellowCards: [],
+      ownGoals : [],
       playerListCopy: [],
       dataLoading: true,
     };
@@ -147,6 +154,21 @@ export default {
         });
       self.dataLoading = false;
     },
+    async getOwnGoals() {
+      let self = this;
+      self.dataLoading = true;
+      await api
+        .TOP_OWN_GOAL()
+        .then((res) => {
+          self.dataFormat(res, self.ownGoals);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      self.dataLoading = false;
+    },
+    
+    
     dataFormat(response, list) {
       response.data.data.forEach((el, i) => {
         if (i < 6) {
@@ -202,6 +224,14 @@ export default {
           this.playerList = this.yellowCards;
         } else {
           this.playerList = this.yellowCards;
+        }
+      }
+      if (value == 4) {
+        if (this.ownGoals.length == 0) {
+          await this.getOwnGoals();
+          this.playerList = this.ownGoals;
+        } else {
+          this.playerList = this.ownGoals;
         }
       }
     },
