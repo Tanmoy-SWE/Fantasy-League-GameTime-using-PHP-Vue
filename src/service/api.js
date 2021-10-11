@@ -32,6 +32,10 @@ export default {
     // https://football.elenasport.io/v2/seasons/:id/topowngoals
     return appClient.get("seasons/4210/topowngoals?expand=player");
   },
+  EPLCLUBS() {
+    // https://football.elenasport.io/v2/stages/320
+    return appClient.get("stages/4226?expand=next_fixtures");
+  },
   FIXTURES() {
     return appClient.get("upcoming");
   },
@@ -43,8 +47,10 @@ export default {
   },
   STANDINGS() {
     //      /v2/seasons/:id/stages
-    return appClient.get("seasons/322/stages?expand=upcoming");
+    return appClient.get("seasons/234/stages?expand=upcoming");
   },
+
+  
   // server
   signUp(payload) {
     return appServer.get(

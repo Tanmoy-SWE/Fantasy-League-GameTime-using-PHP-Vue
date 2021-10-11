@@ -1,7 +1,7 @@
 <template>
   <v-app :dark="goDark">
     <v-container v-show="$vuetify.breakpoint.mdAndUp">
-    <v-system-bar absolute app  
+    <v-system-bar  app
       light
       color="white"
       height="50"
@@ -12,7 +12,7 @@
     </v-system-bar>
     </v-container>
 
-    <v-app-bar app color="transparent" dark>
+    <v-app-bar app color="primary" fixed dark>
    
     <v-container class="d-flex align-center">
        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -110,9 +110,9 @@ export default {
       group: null,
       nav:[
         {name:"Fixtures", to : "/fixture"},
-        {name:"All Leagues",to:"/standing"},
-        {name:"EPL Season",to:"/all-seasons"},
-        {name:"Teams",to:"/teams"},
+        {name:"Leagues",to:"/standing"},
+        {name:"EPL Today",to:"/all-seasons"},
+        {name:"Upcoming",to:"/teams"},
         {name:"Fantasy league",to:"/play"},
         {name:"Fantasy LeaderBoard",to:"/leaderboard"}]
     };

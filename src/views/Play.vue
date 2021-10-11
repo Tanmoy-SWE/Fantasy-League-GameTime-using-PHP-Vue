@@ -46,6 +46,7 @@
                 v-if="modeSignup"
                 :disabled="!valid"
                 color="primary"
+                 width="150"
                 class="mr-4"
                 @click="signUp('signup')"
                 >Sign up</v-btn
@@ -56,15 +57,16 @@
                 :disabled="!valid"
                 color="primary"
                 class="mr-4"
+                width="150"
                 @click="signUp('login')"
                 >Login</v-btn
               >
             </v-card-actions>
             <v-card-text>
-              <p v-if="!modeSignup" @click="modeSignup = true">
+              <p style="cursor:pointer" v-if="!modeSignup" @click="modeSignup = true">
                 Need a account? Sign up here.
               </p>
-              <p v-if="modeSignup" @click="modeSignup = false">
+              <p style="cursor:pointer" v-if="modeSignup" @click="modeSignup = false">
                 Already have a account? Login here
               </p>
             </v-card-text>

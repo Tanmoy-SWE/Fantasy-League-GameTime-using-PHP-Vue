@@ -51,6 +51,7 @@ export default {
         },
         { text: "Team 1", value: "homeName", sortable: true },
         { text: "Team 2", value: "awayName", sortable: true },
+        //{ text: "Live Score", value: "awayName", sortable: true },
         { text: "Venue Name", value: "venueName" },
       ],
     };

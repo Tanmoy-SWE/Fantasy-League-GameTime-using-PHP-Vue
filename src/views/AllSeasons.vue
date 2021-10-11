@@ -15,7 +15,7 @@
             hide-details
             class="px-4"
           ></v-text-field>
-          <v-data-table :search="search" :headers="headers" :items="table">
+          <v-data-table :search="search" :headers="headers" no-data-text="No Matches Today" :items="table">
           </v-data-table>
         </v-card>
       </v-container>
@@ -40,6 +40,7 @@ export default {
         },
         { text: "Team 1", value: "homeName", sortable: true },
         { text: "Team 2", value: "awayName", sortable: true },
+        { text: "Live Score", value: "awayName", sortable: true },
         { text: "Venue Name", value: "venueName" },
       ],
     };

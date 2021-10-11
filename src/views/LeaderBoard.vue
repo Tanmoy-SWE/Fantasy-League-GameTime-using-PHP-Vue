@@ -11,7 +11,7 @@
             </thead>
             <tbody>
               <tr v-for="(item, index) in user" :key="index">
-                <td class="text-left">{{ item.email }}</td>
+                <td class="text-left">{{ item.name }}</td>
                 <td class="text-left">{{ item.score }}</td>
               </tr>
             </tbody>
